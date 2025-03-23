@@ -53,8 +53,8 @@ export default function UploadPage(){
         }
     }
     return (
-        <div className="flex items-center object-center w-full min-h-screen h-auto">
-            <div className="flex flex-col w-full max-w-screen-lg gap-4 m-auto text-white bg-rrteal p-6 rounded-md">
+        <div className="flex w-full min-h-screen h-auto">
+            <div className="flex flex-col w-full max-w-screen-lg mt-10 gap-4 mx-auto mb-auto text-white bg-rrteal p-6 rounded-md">
                 <h1 className="text-2xl font-bold mx-auto" >Upload Your Item</h1>
                 {status && 
                     <div className="mx-auto text-lg bg-green-500 w-full p-2 text-center font-bold">
@@ -93,10 +93,9 @@ export default function UploadPage(){
                             <option value="KeyChains">Key Chains</option>
                         </select>
                     </div>
-                    
                 </div>
                 <div>
-                    <p className={(error === true && file === null) ? "text-lg text-red-500" : "text-lg"}>Item image upload*</p>
+                    <p className={(error === true && file === null) ? "text-lg text-red-500" : "text-lg"}>Item image upload</p>
                     <label htmlFor="img">
                         <div className="w-full bg-white p-2 rounded-md">
                             <Image src={"/ImageUpload.png"} className="mx-auto" alt="Upload Image" width={32} height={32}></Image>
