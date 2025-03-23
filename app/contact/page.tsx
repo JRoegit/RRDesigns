@@ -1,7 +1,39 @@
+import { FaRegPaperPlane } from "react-icons/fa";
+
 export default function ContactPage(){
     return (
-        <div className="h-screen w-full max-w-screen-lg bg-rrwhite text-black mx-auto">
-            Contact Page
+        <div className="h-auto min-h-screen w-full max-w-screen-lg bg-rrwhite text-black mx-auto flex flex-row">
+            <div className="flex flex-col text-black p-6 w-1/2">
+                <h1 className="text-4xl lg:text-5xl font-bold">Let's Get In Touch!</h1>
+                <h2 className="text-xl mt-10 font-semibold">Ask how we can help you:</h2>
+                <div className="mt-5">
+                    <h1 className="font-semibold">Custom Engravings</h1>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus cum dolor, quas temporibus dignissimos doloremque magni amet rem dolores soluta alias minima inventore perspiciatis deleniti impedit labore accusamus beatae. Beatae?</p>
+                </div>
+                <div className="mt-5">
+                    <h1 className="font-semibold">Personalized Gifts</h1>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus cum dolor, quas temporibus dignissimos doloremque magni amet rem dolores soluta alias minima inventore perspiciatis deleniti impedit labore accusamus beatae. Beatae?</p>
+                </div>
+                <div className="mt-5">
+                    <h1 className="font-semibold">Sublimation Printing</h1>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus cum dolor, quas temporibus dignissimos doloremque magni amet rem dolores soluta alias minima inventore perspiciatis deleniti impedit labore accusamus beatae. Beatae?</p>
+                </div>
+
+            </div>
+            <div className="w-1/2 p-6">
+                <div className="flex flex-col w-full border-2 border-rrteal rounded-t-md border-b-0">
+                    <h1 className="mx-auto text-2xl font-semibold p-4">Contact Us</h1>
+                    <form className="mx-6 flex flex-col font-semibold gap-2">
+                        <p>Name<span className="text-red-500">*</span></p>
+                        <input type="text" className="w-full bg-black/5 rounded-md border-b-2 border-black/40"/>
+                        <p>Email<span className="text-red-500">*</span></p>
+                        <input type="text" className="w-full bg-black/5 rounded-md border-b-2 border-black/40"/>
+                        <p>Message<span className="text-red-500">*</span></p>
+                        <textarea className="w-full bg-black/5 rounded-md border-b-2 border-black/40"/>
+                        <button className="flex flex-row mt-4 font-semibold text-white px-4 py-2 rounded-md bg-amber-400 border-b-3 border-l-3 border-black/40 mx-auto">Send <FaRegPaperPlane className="ml-2 my-auto text-white"/></button>
+                    </form>
+                </div>
+            </div>
         </div>
     )
 }

@@ -13,7 +13,6 @@ export default function NavBar(){
                     <Link href={"/gallery"} className="hover:text-black/70 hover:cursor-pointer">Gallery</Link>
                     <Link href={"/about"} className="hover:text-black/70 hover:cursor-pointer">About</Link>
                     <Link href={"/contact"} className="hover:text-black/70 hover:cursor-pointer">Contact</Link>
-                    <button className="hover:text-black/70 hover:cursor-pointer">Testimonials</button>
                 </div>
             </div>
         </div>
