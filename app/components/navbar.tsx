@@ -1,4 +1,3 @@
-import Image from "next/image"
 import Logo from "./logo"
 import Link from "next/link"
 import { verifySession } from "../lib/session"

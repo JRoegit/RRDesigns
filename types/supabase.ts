@@ -37,7 +37,6 @@ export type Database = {
       item: {
         Row: {
           category: string | null
-          created_at: string
           id: number
           image_url: string | null
           title: string | null
@@ -45,7 +44,6 @@ export type Database = {
         }
         Insert: {
           category?: string | null
-          created_at?: string
           id?: number
           image_url?: string | null
           title?: string | null
@@ -53,7 +51,6 @@ export type Database = {
         }
         Update: {
           category?: string | null
-          created_at?: string
           id?: number
           image_url?: string | null
           title?: string | null
