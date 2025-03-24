@@ -7,9 +7,7 @@ export default function Footer(){
     return (
        <div className="w-full mt-auto bg-rrteal h-28">
             <div className="mx-auto w-full h-full max-w-screen-lg flex flex-row text-white items-center px-6">
-                <Link href={"/"} className="my-auto">
-                    <Logo width={150} height={75} color="#ffffff"/>
-                </Link>
+                <Logo width={150} height={75} color="#ffffff"/>
                 <div className="flex flex-row gap-6 mx-auto text-lg">
                     <Link href={"/gallery"}>Gallery</Link>
                     <Link href={"/about"}>About</Link>

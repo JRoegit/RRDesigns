@@ -28,7 +28,7 @@ export function SignInForm(){
                 setError(data.error)
             } else {
                 setSuccess("Logged in successfuly")
-                router.push("/dashboard")
+                router.push("/dashboard/upload")
             }
         } else {
             setError("Couldn't fulfil request.")

@@ -14,7 +14,7 @@ export default async function NavBar(){
                     <Link href={"/gallery"} className="hover:text-black/70 hover:cursor-pointer">Gallery</Link>
                     <Link href={"/about"} className="hover:text-black/70 hover:cursor-pointer">About</Link>
                     <Link href={"/contact"} className="hover:text-black/70 hover:cursor-pointer">Contact</Link>
-                    {session.isAuth && <Link className="hover:text-black/70 hover:cursor-pointer" href={"/dashboard"}>DashBoard</Link>}
+                    {session.isAuth && <Link className="hover:text-black/70 hover:cursor-pointer" href={"/dashboard/upload"}>DashBoard</Link>}
                 </div>
             </div>
         </div>

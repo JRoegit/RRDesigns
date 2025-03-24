@@ -1,3 +1,11 @@
+export type Item = {
+  id: number
+  title: string | null
+  image_url:string
+  category: string
+  type:string
+}
+
 export type Json =
   | string
   | number

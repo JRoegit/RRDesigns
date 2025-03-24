@@ -79,6 +79,7 @@ export default function UploadPage(){
                             <option value="Sports">Sports</option>
                             <option value="Business">Business</option>
                             <option value="Personalized">Personalized</option>
+                            <option value="Test">Test</option>
                         </select>
                     </div>
                     <div className="w-full">
@@ -91,6 +92,7 @@ export default function UploadPage(){
                             <option value="TShirt">T-Shirts</option>
                             <option value="Hoodies">Hoodies</option>
                             <option value="KeyChains">Key Chains</option>
+                            <option value="Test">Test</option>
                         </select>
                     </div>
                 </div>

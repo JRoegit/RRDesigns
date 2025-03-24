@@ -147,7 +147,7 @@ export async function GET(request : Request){
 
 	const dbClient = await createClient()	
 
-	const {data : items, error} = await dbClient.from("item").select("*").order("uploaded_at", {ascending: false}).limit(limit).range(offset,offset + limit - 1)
+	const {data : items, error} = await dbClient.from("item").select("*").limit(limit).range(offset,offset + limit - 1)
   if(error){
     return NextResponse.json({error:error},{status: 500})
   }
