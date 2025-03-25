@@ -8,7 +8,7 @@ export default function UploadPage(){
     const [uploading, setUploading] = useState(false)
     const [uploadedImg, setUploadedImg] = useState("")
     const [category, setCategory] = useState("None")
-    const [type, setType] = useState("")
+    const [type, setType] = useState("None")
     const [error, setError] = useState(false)
     const [status, setStatus] = useState("")
     const [serverError, setServerError] = useState("")
@@ -46,8 +46,6 @@ export default function UploadPage(){
             setTitle("")
             setFile(null)
             setUploadedImg("")
-            setCategory("")
-
         } else {
             setServerError(data.error)
         }

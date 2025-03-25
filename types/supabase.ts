@@ -1,6 +1,6 @@
 export type Item = {
   id: number
-  title: string | null
+  title: string
   image_url:string
   category: string
   type:string
