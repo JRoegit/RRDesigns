@@ -1,6 +1,7 @@
 import { verifySession } from "@/app/lib/session";
 import createClient from "@/utils/supabase/server";
 import {
+  DeleteObjectCommand,
   S3Client,
 } from "@aws-sdk/client-s3";
 import { Upload } from "@aws-sdk/lib-storage";
@@ -14,6 +15,8 @@ const awsClient = new S3Client({
   },
 })
 
+const bucketName = process.env.AWS_BUCKET_NAME
+
 export async function POST(request : Request){
 
   const session = await verifySession()
@@ -22,7 +25,6 @@ export async function POST(request : Request){
   }
 
   const form = await request.formData()
-  const bucketName = process.env.AWS_BUCKET_NAME
   const file = form.get("file") as File
   try {
     const parallelUploads3 = new Upload({
@@ -127,7 +129,16 @@ export async function DELETE(request : Request){
   if (idString){
     const id = parseInt(idString,10)
     const dbClient = await createClient()
-
+    const {data: item} = await dbClient.from('item').select().eq('id',id)
+    if(item && item[0].image_url){
+      try {
+        const splitup = item[0].image_url.split("/")
+        const data = await awsClient.send(new DeleteObjectCommand({Bucket : bucketName, Key: splitup[splitup.length - 1]}));
+        console.log("Success. Object deleted.", data);
+      } catch (err) {
+        console.log("Error", err);
+      }
+    }
     await dbClient.from('item').delete().eq('id',id)
     return NextResponse.json({status : 'Deleted Successfuly'}, {status: 201})
   } else {
@@ -138,18 +149,39 @@ export async function DELETE(request : Request){
 // NEEDS REWRITE!
 // Need to taylor this to be better I believe... (will need to handle categories and such?)
 export async function GET(request : Request){
-  
 	const { searchParams } = new URL(request.url)
 	const page = parseInt(searchParams.get("page") || "1", 10)
 	const limit = parseInt(searchParams.get("limit") || "5", 10)
-	// const limit = 5
+	const category = searchParams.get("category") || ""
+  const type = searchParams.get("type") || ""
 	const offset = (page - 1) * limit
 
 	const dbClient = await createClient()	
-
-	const {data : items, error} = await dbClient.from("item").select("*").limit(limit).range(offset,offset + limit - 1)
-  if(error){
-    return NextResponse.json({error:error},{status: 500})
+  let items
+  let err
+  if(category) {
+    if(type) {
+      let {data, error} = await dbClient.from("item").select("*").eq("category",category).eq("type",type).limit(limit).range(offset,offset + limit - 1)
+      items = data
+      err = error
+    } else {
+      let {data, error} = await dbClient.from("item").select("*").eq("category",category).limit(limit).range(offset,offset + limit - 1)
+      items = data
+      err = error
+    }
+  } else if(type) {
+    let {data, error} = await dbClient.from("item").select("*").eq("type",type).limit(limit).range(offset,offset + limit - 1)
+    items = data
+    err = error
+  } else {
+    let {data, error} = await dbClient.from("item").select("*").limit(limit).range(offset,offset + limit - 1)
+    items = data
+    err = error
+  }
+	// let {data, error} = await dbClient.from("item").select("*").eq("category",category).eq("type",type).limit(limit).range(offset,offset + limit - 1)
+  // items = data
+  if(err){
+    return NextResponse.json({error:err},{status: 500})
   }
 	return NextResponse.json({items})
 }
