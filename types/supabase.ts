@@ -6,6 +6,11 @@ export type Item = {
   type:string
 }
 
+export type Type = {
+  type: string
+  count: number
+}
+
 export type Json =
   | string
   | number

@@ -28,7 +28,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col bg-rrwhite text-black`}>
         <NavBar/>
+        <div className="bg-[url(/floral15.png)] bg-repeat w-full h-auto ">
           {children}
+        </div>
         <Footer/>
       </body>
     </html>

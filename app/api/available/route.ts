@@ -7,7 +7,8 @@ export async function GET() {
     const dbClient = await createClient()	
     
     const {data: items} = await dbClient.from("item").select("category,type, count()").order("category")
-
+    const {data: allTypes} = await dbClient.from("item").select("type, count()")
+    console.log(allTypes)
     let data
 
     if(items){
@@ -25,6 +26,9 @@ export async function GET() {
         }
         for(let [key, val] of itemMap.entries()) {
             itemMap.set(key,val.sort())
+        }
+        if(allTypes) {
+            itemMap.set("", allTypes)
         }
         data = Object.fromEntries(itemMap)
     }
