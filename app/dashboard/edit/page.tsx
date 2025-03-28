@@ -10,7 +10,7 @@ export default function EditPage(){
     
     console.log(setPage)
 
-    const loadArtworks = async () => {
+    const loadItems = async () => {
         console.log(page)
         const res = await fetch(`/api/item?page=${page}`)
         const data = await res.json()
@@ -19,7 +19,7 @@ export default function EditPage(){
 
     // WORKS IN PROD, find a way to ignore the strict mdoe
     useEffect(() => {
-        loadArtworks()
+        loadItems()
     }, [page])
     
     return (

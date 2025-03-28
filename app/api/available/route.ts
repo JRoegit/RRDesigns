@@ -24,7 +24,7 @@ export async function GET() {
                 itemMap.set(category,[{type, count}])
             }
         }
-        for(let [key, val] of itemMap.entries()) {
+        for(const [key, val] of itemMap.entries()) {
             itemMap.set(key,val.sort())
         }
         if(allTypes) {

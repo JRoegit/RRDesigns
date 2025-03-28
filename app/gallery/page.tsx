@@ -21,7 +21,7 @@ export default function GalleryPage(){
             const url = '/api/available'
             const response = fetch(url)
             const data = await (await response).json()
-            let tmpCategories: string[] = []
+            const tmpCategories: string[] = []
             Object.keys(data).forEach((val) => {if(val) {tmpCategories.push(val)}})
             if(category) {
                 setAvailableTypes(data[category])
@@ -57,17 +57,29 @@ export default function GalleryPage(){
             <h1 className="text-4xl font-bold text-black text-wrap">Check out all of Rhonda's amazing work!</h1>
             <div className="">Preamble Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum laudantium enim, odio maxime iusto alias. Est cum repellat nostrum, eaque doloremque delectus distinctio dicta, totam debitis doloribus, minima earum exercitationem!</div> */}
             <div className="flex flex-row flex-wrap p-2 gap-2">
-                <button className={"py-2 px-4  text-white font-bold rounded-md hover:cursor-pointer border-black/20 border-b-4 hover:bg-rrteal transition-colors duration-250 ease-in-out" + (category == "" ? "  bg-rrteal" : " bg-teal-600")} onClick={() => {setCategory(""), setPage(1)}}>All</button>
+                <button className={"py-2 px-4  text-white font-bold rounded-md hover:cursor-pointer border-black/20 border-b-4 hover:bg-rrteal transition-colors duration-250 ease-in-out" + (category == "" ? "  bg-rrteal" : " bg-teal-600")} onClick={() => {
+                    setCategory("") 
+                    setPage(1)
+                    }}>All</button>
                 {availableCategories && availableCategories.sort().map((key, idx) => (
-                    <button key={idx} className={"py-2 px-6  text-xl text-white font-bold rounded-md hover:cursor-pointer border-black/20 border-b-4 hover:bg-rrteal transition-colors duration-250 ease-in-out" + (key === category ? "  bg-rrteal" : " bg-teal-600")} onClick={() => {setCategory(`${key}`), setPage(1)}}>{key}</button>
+                    <button key={idx} className={"py-2 px-6  text-xl text-white font-bold rounded-md hover:cursor-pointer border-black/20 border-b-4 hover:bg-rrteal transition-colors duration-250 ease-in-out" + (key === category ? "  bg-rrteal" : " bg-teal-600")} onClick={() => {
+                        setCategory(`${key}`)
+                        setPage(1)
+                    }}>{key}</button>
                 ))}
             </div>
             <div className="w-full border-2 border-black/20 border-dashed"></div>
             {/* <div className="text-2xl text-black font-bold" >Types</div> */}
             <div className="flex flex-row flex-wrap p-2 gap-2">
-                <button className={"py-2 px-4 bg-amber-500 text-white font-bold rounded-full hover:cursor-pointer border-black/20 border-b-4 hover:bg-amber-600 transition-colors duration-250 ease-in-out " + (type == "" ? "bg-amber-600" : "")} onClick={() => {setType(""), setPage(1)}}>All</button>
+                <button className={"py-2 px-4 bg-amber-500 text-white font-bold rounded-full hover:cursor-pointer border-black/20 border-b-4 hover:bg-amber-600 transition-colors duration-250 ease-in-out " + (type == "" ? "bg-amber-600" : "")} onClick={() => {
+                    setType("")
+                    setPage(1)
+                    }}>All</button>
                 {availableTypes && availableTypes.sort(sortType).map((key, idx) => (
-                    <button key={idx} className={'py-2 px-4 bg-amber-500 text-white font-bold rounded-full hover:cursor-pointer border-black/20 border-b-4 hover:bg-amber-600 transition-colors duration-250 ease-in-out ' + (key.type == type? " bg-amber-600" : "")} onClick={() => {setType(`${key.type}`), setPage(1)}}>{key.type} ({key.count})</button>
+                    <button key={idx} className={'py-2 px-4 bg-amber-500 text-white font-bold rounded-full hover:cursor-pointer border-black/20 border-b-4 hover:bg-amber-600 transition-colors duration-250 ease-in-out ' + (key.type == type? " bg-amber-600" : "")} onClick={() => {
+                        setType(`${key.type}`)
+                        setPage(1)
+                    }}>{key.type} ({key.count})</button>
                 ))}
             </div>
             <Masonry breakpointCols={{ default:4, 1024:3, 768:2, 640:1}} className="masonry-grid " columnClassName="masonry-column">

@@ -57,7 +57,7 @@ export async function POST(request : Request){
   const category = form.get("category") as string || ""
   const type = form.get("type") as string || ""
 
-  const {data : item, error} = await dbClient.from('item').insert([{title: title,image_url:imageUrl, category:category, type: type}]).select()
+  const {error} = await dbClient.from('item').insert([{title: title,image_url:imageUrl, category:category, type: type}]).select()
   if(error){
     console.log(error)
     return NextResponse.json({error : 'Error insterting item to database'}, {status: 500})
@@ -161,20 +161,20 @@ export async function GET(request : Request){
   let err
   if(category) {
     if(type) {
-      let {data, error} = await dbClient.from("item").select("*").eq("category",category).eq("type",type).limit(limit).range(offset,offset + limit - 1)
+      const {data, error} = await dbClient.from("item").select("*").eq("category",category).eq("type",type).limit(limit).range(offset,offset + limit - 1)
       items = data
       err = error
     } else {
-      let {data, error} = await dbClient.from("item").select("*").eq("category",category).limit(limit).range(offset,offset + limit - 1)
+      const {data, error} = await dbClient.from("item").select("*").eq("category",category).limit(limit).range(offset,offset + limit - 1)
       items = data
       err = error
     }
   } else if(type) {
-    let {data, error} = await dbClient.from("item").select("*").eq("type",type).limit(limit).range(offset,offset + limit - 1)
+    const {data, error} = await dbClient.from("item").select("*").eq("type",type).limit(limit).range(offset,offset + limit - 1)
     items = data
     err = error
   } else {
-    let {data, error} = await dbClient.from("item").select("*").limit(limit).range(offset,offset + limit - 1)
+    const {data, error} = await dbClient.from("item").select("*").limit(limit).range(offset,offset + limit - 1)
     items = data
     err = error
   }
