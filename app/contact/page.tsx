@@ -31,7 +31,7 @@ export default function ContactPage(){
                         <input type="text" className="w-full bg-black/5 rounded-md border-b-2 border-black/40 px-2 py-1 font-normal"/>
                         <p>Message<span className="text-red-500">*</span></p>
                         <textarea className="w-full bg-black/5 rounded-md border-b-2 border-black/40 px-2 py-1 font-normal"/>
-                        <button className="flex flex-row mt-4 font-semibold text-white px-4 py-2 rounded-md bg-amber-400 border-b-3 border-l-3 border-black/40 mx-auto hover:bg-amber-500 hover:cursor-pointer transition-colors duration-250 ease-in-out z-50">Send <FaRegPaperPlane className="ml-2 my-auto text-white"/></button>
+                        <button className="flex flex-row mt-4 font-semibold text-white px-4 py-2 rounded-md bg-amber-500 border-b-3 border-l-3 border-black/40 mx-auto hover:bg-amber-600 hover:cursor-pointer transition-colors duration-250 ease-in-out z-50">Send <FaRegPaperPlane className="ml-2 my-auto text-white"/></button>
                     </form>
                 </div>
                 <div className="relative right-5.5 bottom-25 z-10">

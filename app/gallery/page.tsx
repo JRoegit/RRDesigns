@@ -15,6 +15,7 @@ export default function GalleryPage(){
     const [category, setCategory] = useState("")
     const [type, setType] = useState("")
     const [isMore, setIsMore] = useState(true)
+    const [isLoading, setIsLoading] = useState(false)
 
     useEffect(() => {
         async function fetchAvailable() {
@@ -32,6 +33,7 @@ export default function GalleryPage(){
         }
 
         async function fetchPosts() {
+            setIsLoading(true)
             const url = `/api/item?page=${page}&limit=${PER_PAGE}${category ? "&category=" + category : ""}${type ? "&type=" + type : ""}`
             const response = fetch(url)
             const data = await (await response).json()
@@ -46,6 +48,7 @@ export default function GalleryPage(){
                 setItems(data.items)
             }
             console.log(items)
+            setIsLoading(false)
         }
         fetchPosts()
         fetchAvailable()
@@ -82,6 +85,7 @@ export default function GalleryPage(){
                     }}>{key.type} ({key.count})</button>
                 ))}
             </div>
+            {isLoading && items.length == 0 && <div className="m-auto text-4xl font-bold">Loading...</div>}
             <Masonry breakpointCols={{ default:4, 1024:3, 768:2, 640:1}} className="masonry-grid " columnClassName="masonry-column">
                 {items.map((item, index) => (
                     <GridItem key={index} item={item}/>
