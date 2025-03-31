@@ -1,4 +1,4 @@
-export default function Envelope({width} : {width : number}){
+export default function Envelope(){
     return (
         <svg className="z-10 w-full"  viewBox="0 0 1080 461" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M0 28.8819V461H1080L540 244.941L56.6084 51.5315L0 28.8819Z" fill="#00504D"/>

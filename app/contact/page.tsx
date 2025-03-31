@@ -35,8 +35,7 @@ export default function ContactPage(){
                 </div>
                 
                 <div className="relative bottom-25 scale-111">
-                    <Envelope width={443}/>
-                    {/* <Envelope width={443}/> */}
+                    <Envelope/>
                 </div>
             </div>
         </div>
