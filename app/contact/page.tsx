@@ -19,7 +19,6 @@ export default function ContactPage(){
                     <h1 className="font-semibold">Sublimation Printing</h1>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus cum dolor, quas temporibus dignissimos doloremque magni amet rem dolores soluta alias minima inventore perspiciatis deleniti impedit labore accusamus beatae. Beatae?</p>
                 </div>
-
             </div>
             <div className="w-full md:w-1/2 max-w-md mx-auto p-6">
                 <div className="flex flex-col w-full border-2 border-rrteal rounded-t-md border-b-0 z-20 bg-rrwhite">
@@ -34,8 +33,10 @@ export default function ContactPage(){
                         <button className="flex flex-row mt-4 font-semibold text-white px-4 py-2 rounded-md bg-amber-500 border-b-3 border-l-3 border-black/40 mx-auto hover:bg-amber-600 hover:cursor-pointer transition-colors duration-250 ease-in-out z-50">Send <FaRegPaperPlane className="ml-2 my-auto text-white"/></button>
                     </form>
                 </div>
-                <div className="relative right-5.5 bottom-25 z-10">
+                
+                <div className="relative bottom-25 scale-111">
                     <Envelope width={443}/>
+                    {/* <Envelope width={443}/> */}
                 </div>
             </div>
         </div>
