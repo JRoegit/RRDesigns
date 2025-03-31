@@ -1,6 +1,7 @@
 import Logo from "./logo"
 import Link from "next/link"
 import { verifySession } from "../lib/session"
+import NavHamburger from "./navbar-hamburger"
 
 export default async function NavBar(){
     const session = await verifySession()
@@ -11,10 +12,11 @@ export default async function NavBar(){
                     <Logo width={135} height={70} color="#000000"/>
                 </Link>
                 <div className="ml-auto flex flex-row gap-6 text-lg">
-                    <Link href={"/gallery"} className="hover:text-black/70 hover:cursor-pointer">Gallery</Link>
-                    <Link href={"/about"} className="hover:text-black/70 hover:cursor-pointer">About</Link>
-                    <Link href={"/contact"} className="hover:text-black/70 hover:cursor-pointer">Contact</Link>
-                    {session.isAuth && <Link className="hover:text-black/70 hover:cursor-pointer" href={"/dashboard/upload"}>DashBoard</Link>}
+                    <NavHamburger/>
+                    <Link href={"/gallery"} className="hover:text-black/70 hover:cursor-pointer hidden sm:block">Gallery</Link>
+                    <Link href={"/about"} className="hover:text-black/70 hover:cursor-pointer hidden sm:block">About</Link>
+                    <Link href={"/contact"} className="hover:text-black/70 hover:cursor-pointer hidden sm:block">Contact</Link>
+                    {session.isAuth && <Link className="hover:text-black/70 hover:cursor-pointer hidden sm:block" href={"/dashboard/upload"}>DashBoard</Link>}
                 </div>
             </div>
         </div>
