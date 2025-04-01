@@ -14,7 +14,7 @@ export default function NavHamburger() {
             <button className="sm:hidden hover:cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
                 <RxHamburgerMenu className="size-10"/>
             </button>
-            <div className={"absolute border-l-2 border-black/20 p-10 top-20 drop-shadow-md right-0 w-fit flex flex-col gap-4  h-screen transition duration-500 ease-in-out bg-rrwhite " + (isOpen ? "" : "menuslider")}>
+            <div className={"absolute border-l-2 border-black/20 p-10 top-20 drop-shadow-md right-0 w-fit flex flex-col gap-4  h-screen transition  duration-500 ease-in-out  bg-rrwhite " + (isOpen ? "" : "menuslider")}>
                 <Link onClick={() => setIsOpen(!isOpen)} href={"/gallery"} className="hover:border-amber-500 font-semibold w-fit border-b-4 border-transparent text-black hover:cursor-pointer text-4xl transition duration-300 flex flex-row gap-2 ease-in-out">
                     <GrGallery/>Gallery
                 </Link>
