@@ -26,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col bg-rrwhite text-rrcharchoal overflow-x-hidden`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col bg-rrwhite text-rrcharchoal overflow-x-hidden overscroll-x-none `}>
         <NavBar/>
         <div className="bg-[url(/floral15.png)] bg-repeat w-full h-auto ">
           {children}

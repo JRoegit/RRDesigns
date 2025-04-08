@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function HowItWorksCard({number, image, title, description, direction, bordered} : {number: number, image : string, title : string, description: string, direction: string, bordered : boolean}) {
+export default function HowItWorksCard({number, image, title, description, direction} : {number: number, image : string, title : string, description: string, direction: string}) {
     return (
         <div className={`mx-10 w-fit flex flex-col-reverse ${direction == "left" ? "sm:flex-row" : "sm:flex-row-reverse"} relative bg-rrwhite rounded-md drop-shadow-lg`}>
             <div className={`drop-shadow-lg border-b-2 border-amber-600 rounded-full absolute ${direction == "left" ? "-top-6 -left-6 -rotate-6" : "-top-6 -right-6 rotate-6"} bg-amber-500 text-white size-12 flex items-center justify-center font-bold text-2xl p-4 `}>{number}</div>

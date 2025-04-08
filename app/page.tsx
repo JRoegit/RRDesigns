@@ -2,6 +2,7 @@ import Link from "next/link";
 import Flowers from "./components/flowers";
 import WhiteWaveTop from "./components/white-wavetop";
 import HowItWorksCard from "./components/how-it-works-card";
+import ItemCarousel from "./components/ItemCarousel";
 
 export default function Home() {
     return (
@@ -25,10 +26,12 @@ export default function Home() {
             <WhiteWaveTop/>
             <div className="flex flex-col w-full max-w-screen-lg gap-10  mx-auto">
                 <h1 className="mx-auto text-5xl font-bold">How Does It Work?</h1>
-                <HowItWorksCard bordered={false} number={1} image={"/Woofer.jpg"} title={"Share Your Idea"} description={"Send us your design, image, or just an idea - We'll chat to understand what you are looking for!"} direction="left"/>
-                <HowItWorksCard bordered={true} number={2} image={"/charcoaldog.png"} title={"Design Preperation"} description={"We turn your idea into a high-quality, engravable digital design, ready for production."} direction="right"/>
-                <HowItWorksCard bordered={false} number={3} image={"/engravedYeti.png"} title={"We Engrave It"} description={"Your design is professionally engraved onto your chosen product — like water bottles, mugs, and more."} direction="left"/>
+                <HowItWorksCard number={1} image={"/Woofer.jpg"} title={"Share Your Idea"} description={"Send us your design, image, or just an idea - We'll chat to understand what you are looking for!"} direction="left"/>
+                <HowItWorksCard number={2} image={"/charcoaldog.png"} title={"Design Preperation"} description={"We turn your idea into a high-quality, engravable digital design, ready for production."} direction="right"/>
+                <HowItWorksCard number={3} image={"/engravedYeti.png"} title={"We Engrave It"} description={"Your design is professionally engraved onto your chosen product — like water bottles, mugs, and more."} direction="left"/>
                 <div className="h-10"></div>
+                <h1 className="mx-auto text-5xl font-bold">Some common items</h1>
+                <ItemCarousel/>
             </div>
         </div>
     );
