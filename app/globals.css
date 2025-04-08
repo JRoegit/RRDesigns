@@ -8,6 +8,7 @@
 @theme inline {
   --color-rrteal: #006663;
   --color-rrwhite: #F9FAEF;
+  --color-rrcharcoal: #2e2e38;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);

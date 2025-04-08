@@ -29,7 +29,7 @@ export default function EditPage(){
                     <EditableItem key={item.id} item={item}/>
                 )
             })}
-            {items.length == 0 && <div className="text-black m-auto text-2xl font-bold">No items to display</div>}
+            {items.length == 0 && <div className="text-rrcharcoal m-auto text-2xl font-bold">No items to display</div>}
             <button type="button" onClick={() => setPage(page + 1)}>Load More</button>
         </div>
     )

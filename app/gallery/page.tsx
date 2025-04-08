@@ -55,9 +55,9 @@ export default function GalleryPage(){
     }, [page,category,type])
 
     return (
-        <div className="w-full flex flex-col h-auto min-h-screen max-w-screen-lg mx-auto bg-rrwhite text-black p-6">
+        <div className="w-full flex flex-col h-auto min-h-screen max-w-screen-lg mx-auto bg-rrwhite text-rrcharcoal p-6">
             {/* {page && <div>Page : {page}</div>}
-            <h1 className="text-4xl font-bold text-black text-wrap">Check out all of Rhonda's amazing work!</h1>
+            <h1 className="text-4xl font-bold text-rrcharcoal text-wrap">Check out all of Rhonda's amazing work!</h1>
             <div className="">Preamble Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum laudantium enim, odio maxime iusto alias. Est cum repellat nostrum, eaque doloremque delectus distinctio dicta, totam debitis doloribus, minima earum exercitationem!</div> */}
             <div className="flex flex-row flex-wrap p-2 gap-2">
                 <button className={"py-2 px-4  text-white font-bold rounded-md hover:cursor-pointer border-black/20 border-b-4 hover:bg-rrteal transition-colors duration-250 ease-in-out" + (category == "" ? "  bg-rrteal" : " bg-teal-600")} onClick={() => {
@@ -72,7 +72,7 @@ export default function GalleryPage(){
                 ))}
             </div>
             <div className="w-full border-2 border-black/20 border-dashed"></div>
-            {/* <div className="text-2xl text-black font-bold" >Types</div> */}
+            {/* <div className="text-2xl text-rrcharcoal font-bold" >Types</div> */}
             <div className="flex flex-row flex-wrap p-2 gap-2">
                 <button className={"py-2 px-4 bg-amber-500 text-white font-bold rounded-full hover:cursor-pointer border-black/20 border-b-4 hover:bg-amber-600 transition-colors duration-250 ease-in-out " + (type == "" ? "bg-amber-600" : "")} onClick={() => {
                     setType("")

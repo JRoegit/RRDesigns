@@ -95,7 +95,7 @@ export function EditableItem({item} : {item: Item}) {
             <div className="flex flex-col w-full max-w-96 p-2 gap-2 border-black/30 h-fit border-2 rounded-md">
                 <Image className=" mx-auto object-contain" src={uploadedImg} alt={item.title? item.title : ""} width={100} height={100}/>
                 <div>
-                    <p className="text-black text-2xl">{item.title} : {item.id}</p>
+                    <p className="text-rrcharcoal text-2xl">{item.title} : {item.id}</p>
                 </div>
                 <Modal isOpen={modalOpen}>
                     {status && 
@@ -113,13 +113,13 @@ export function EditableItem({item} : {item: Item}) {
                     </label>
                     <input id={`img${item.id}`} className="hidden" type="file" onChange={onImageUploaded} />
                     <div>
-                        <p className={(error === true) ? " text-red-500 text-lg" : "text-lg text-black"}>Title</p>
-                        <input className="p-2 bg-black/15 rounded-md text-black w-full" type="text" defaultValue={updatedItem.title? updatedItem.title : ""} placeholder="Title" onChange={(e) => setUpdatedItem({...updatedItem, title: e.target.value})}/>
+                        <p className={(error === true) ? " text-red-500 text-lg" : "text-lg text-rrcharcoal"}>Title</p>
+                        <input className="p-2 bg-black/15 rounded-md text-rrcharcoal w-full" type="text" defaultValue={updatedItem.title? updatedItem.title : ""} placeholder="Title" onChange={(e) => setUpdatedItem({...updatedItem, title: e.target.value})}/>
                     </div>
                     <div className="flex flex-row gap-2">
                         <div className="w-full">
-                            <p className="text-black">Category</p>
-                            <select defaultValue={updatedItem.category ? updatedItem.category : "None"} className="bg-black/15 p-2 rounded-md text-black w-full h-10" onChange={(choice) => {setUpdatedItem({...updatedItem, category: choice.target.value})}}>
+                            <p className="text-rrcharcoal">Category</p>
+                            <select defaultValue={updatedItem.category ? updatedItem.category : "None"} className="bg-black/15 p-2 rounded-md text-rrcharcoal w-full h-10" onChange={(choice) => {setUpdatedItem({...updatedItem, category: choice.target.value})}}>
                                 <option value="None">None</option>
                                 <option value="Sports">Sports</option>
                                 <option value="Business">Business</option>
@@ -128,8 +128,8 @@ export function EditableItem({item} : {item: Item}) {
                             </select>
                         </div>
                         <div className="w-full">
-                            <p className="text-black">Type</p>
-                            <select defaultValue={updatedItem.type ? updatedItem.type : "Marker"} id="mediumSelect" className="bg-black/15  p-2 rounded-md text-black w-full h-10" onChange={(choice) => {setUpdatedItem({...updatedItem, type:choice.target.value})}}>
+                            <p className="text-rrcharcoal">Type</p>
+                            <select defaultValue={updatedItem.type ? updatedItem.type : "Marker"} id="mediumSelect" className="bg-black/15  p-2 rounded-md text-rrcharcoal w-full h-10" onChange={(choice) => {setUpdatedItem({...updatedItem, type:choice.target.value})}}>
                                 <option value="None">None</option>
                                 <option value="Yeti">Yeti</option>
                                 <option value="Mug">Mug</option>
@@ -146,10 +146,10 @@ export function EditableItem({item} : {item: Item}) {
                     <button onClick={handleCloseModal} className="hover:cursor-pointer p-2 bg-gray-700 rounded-md font-semibold">Close</button>
                 </Modal>
                 <Modal isOpen={deleteModalOpen}>
-                    <div className=" p-2 text-black text-normal font-bold mx-auto">DELETE ARTWORK?</div>
-                    <p className="text-black">Are you sure you want to delete this item? It&apos;s data will be removed from the database and cannot be recovered.</p>
+                    <div className=" p-2 text-rrcharcoal text-normal font-bold mx-auto">DELETE ARTWORK?</div>
+                    <p className="text-rrcharcoal">Are you sure you want to delete this item? It&apos;s data will be removed from the database and cannot be recovered.</p>
                     <div className="flex flex-row w-full gap-4">
-                        <button onClick={handleCloseDeleteModal} className="hover:cursor-pointer border-2 border-black/30 bg-white text-black p-2 w-full rounded-md">Cancel</button>
+                        <button onClick={handleCloseDeleteModal} className="hover:cursor-pointer border-2 border-black/30 bg-white text-rrcharcoal p-2 w-full rounded-md">Cancel</button>
                         <button onClick={handleDelete} className="hover:cursor-pointer bg-red-500 border-2 border-black/30 text-white p-2 w-full rounded-md">Delete</button>
                     </div>
                 </Modal>

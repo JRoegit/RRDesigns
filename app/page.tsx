@@ -1,10 +1,11 @@
 import Link from "next/link";
 import Flowers from "./components/flowers";
 import WhiteWaveTop from "./components/white-wavetop";
+import HowItWorksCard from "./components/how-it-works-card";
 
 export default function Home() {
     return (
-        <div className="h-auto  text-black w-full">
+        <div className="h-auto  text-rrcharcoal text-rrcharchoal w-full">
             {/* HERO SECTION */}
             <div className=" h-[90vh] min-h-screen-lg bg-rrwhite w-full">
                 <div className="w-full mx-auto max-w-screen-lg flex flex-row h-auto pt-10">
@@ -22,8 +23,12 @@ export default function Home() {
                 </div>
             </div>
             <WhiteWaveTop/>
-            <div>
-                FRONT PAGE CONTENT HERE
+            <div className="flex flex-col w-full max-w-screen-lg gap-8  mx-auto">
+                <h1 className="mx-auto text-5xl font-bold">How Does It Work?</h1>
+                <HowItWorksCard number={1} image={"/Woofer.jpg"} title={"Share Your Idea"} description={"Send us your design, image, or just an idea - We'll chat to understand what you are looking for!"} direction="left"/>
+                <HowItWorksCard number={2} image={"/Woofer.jpg"} title={"Design Preperation"} description={"We turn your idea into a high-quality, engravable digital design, ready for production."} direction="right"/>
+                <HowItWorksCard number={3} image={"/Woofer.jpg"} title={"We Engrave It"} description={"Your design is professionally engraved onto your chosen product — like water bottles, mugs, and more."} direction="left"/>
+                <div className="h-10"></div>
             </div>
         </div>
     );

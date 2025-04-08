@@ -3,8 +3,8 @@ import Envelope from "../components/envelope";
 
 export default function ContactPage(){
     return (
-        <div className="h-auto min-h-screen w-full max-w-screen-lg bg-rrwhite text-black mx-auto flex flex-col md:flex-row pt-10">
-            <div className="flex flex-col text-black p-6 w-full md:w-1/2">
+        <div className="h-auto min-h-screen w-full max-w-screen-lg bg-rrwhite text-rrcharcoal mx-auto flex flex-col md:flex-row pt-10">
+            <div className="flex flex-col text-rrcharcoal p-6 w-full md:w-1/2">
                 <h1 className="text-4xl lg:text-5xl  font-bold">Let&apos;s Get In Touch!</h1>
                 <h2 className="text-xl mt-10 font-semibold">Ask how we can help you:</h2>
                 <div className="mt-5">
