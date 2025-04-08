@@ -50,5 +50,5 @@ body {
   -o-transform: translate(300px, 0);
   -webkit-transform: translate(300px, 0);
   transform: translate(300px, 0); */
-  right: 0;
+  right: -100%;
 }
