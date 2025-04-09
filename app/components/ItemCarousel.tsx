@@ -10,15 +10,15 @@ const responsive = {
       items: 5
     },
     desktop: {
-      breakpoint: { max: 3000, min: 1024 },
+      breakpoint: { max: 3000, min: 768 },
       items: 3
     },
     tablet: {
-      breakpoint: { max: 1024, min: 464 },
+      breakpoint: { max: 768, min: 640 },
       items: 2
     },
     mobile: {
-      breakpoint: { max: 464, min: 0 },
+      breakpoint: { max: 640, min: 0 },
       items: 1
     }
   };
@@ -28,35 +28,18 @@ export default function ItemCarousel(){
         <Carousel responsive={responsive}
             swipeable={true}
             infinite={true}
-            itemClass="p-4"
+            itemClass="p-4 flex"
             draggable={true}
+            autoPlay={true}
+            autoPlaySpeed={5000}
         >
-            <Image className="rounded-md" src={"/engravedYeti.png"} alt="yet" width={512} height={512}/>
-            <Image className="rounded-md" src={"/engravedYeti.png"} alt="yet" width={512} height={512}/>
-            <Image className="rounded-md" src={"/engravedYeti.png"} alt="yet" width={512} height={512}/>
-            <Image className="rounded-md" src={"/engravedYeti.png"} alt="yet" width={512} height={512}/>
-            <Image className="rounded-md" src={"/engravedYeti.png"} alt="yet" width={512} height={512}/>
+            <Image className="rounded-md object-contain m-auto" src={"/Babies.png"} alt="Custom Baby Clothes" width={512} height={512}/>
+            <Image className="rounded-md object-contain m-auto" src={"/BusinessYeti.png"} alt="Engraved Business Yetis" width={512} height={512}/>
+            <Image className="rounded-md object-contain m-auto" src={"/Hammer.png"} alt="Engraved Hammer" width={512} height={512}/>
+            <Image className="rounded-md object-contain m-auto" src={"/KeyChain.png"} alt="Engraved Key Chain" width={512} height={512}/>
+            <Image className="rounded-md object-contain m-auto" src={"/Mugs.png"} alt="Engraved Mugs" width={512} height={512}/>
+            <Image className="rounded-md object-contain m-auto size-80" src={"/PhoneCase.png"} alt="Custom Phone Case" width={512} height={512}/>
+            <Image className="rounded-md object-contain m-auto" src={"/SportYeti.png"} alt="Engraved Sports Yeti" width={512} height={512}/>
         </Carousel>
-        // <Carousel
-        //     swipeable={false}
-        //     draggable={false}
-        //     showDots={true}
-        //     responsive={responsive}
-        //     ssr={true} // means to render carousel on server-side.
-        //     infinite={true}
-        //     autoPlaySpeed={1000}
-        //     keyBoardControl={true}
-        //     customTransition="all .5"
-        //     transitionDuration={500}
-        //     containerClass="carousel-container"
-        //     removeArrowOnDeviceType={["tablet", "mobile"]}
-        //     dotListClass="custom-dot-list-style"
-        //     itemClass="carousel-item-padding-40-px"
-        // >
-        //     <div>Item 1</div>
-        //     <div>Item 2</div>
-        //     <div>Item 3</div>
-        //     <div>Item 4</div>
-        // </Carousel>
     )
 }
