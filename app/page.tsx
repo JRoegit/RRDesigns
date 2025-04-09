@@ -45,7 +45,7 @@ export default function Home() {
                 <div className="mx-auto w-full max-w-screen-lg flex flex-col">
                     <div className="flex flex-col gap-2 text-white relative">
                         <h1 className="text-8xl">Blank Stuff Is Boring.</h1>
-                        <h2 className="text-8xl"><span className="border-b-10">Let's</span> Fix That!</h2>
+                        <h2 className="text-8xl"><span className="border-b-10">Let&apos;s</span> Fix That!</h2>
                         <Link className="absolute bottom-0 right-0 bg-amber-500 hover:bg-amber-500/75 transition-all ease-in-out duration-500 text-white border-b-2 border-black/50 rounded-md px-6 py-3 text-3xl font-bold" href={"/contact"}>Get In Touch.</Link>
                     </div>
                 </div>
