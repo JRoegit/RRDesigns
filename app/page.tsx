@@ -3,6 +3,7 @@ import Flowers from "./components/flowers";
 import HowItWorksCard from "./components/how-it-works-card";
 import ItemCarousel from "./components/ItemCarousel";
 import WaveTop from "./components/wavetop";
+import FaqItem from "./components/faq-item";
 
 export default function Home() {
     return (
@@ -49,12 +50,27 @@ export default function Home() {
                         <Link className="absolute bottom-0 right-0 bg-amber-500 hover:bg-amber-500/75 transition-all ease-in-out duration-500 text-white border-b-2 border-black/50 rounded-md px-6 py-3 text-3xl font-bold" href={"/contact"}>Get In Touch.</Link>
                     </div>
                 </div>
-                <div className="h-40"/>
+                <div className="h-20"/>
             </div>
             <div className="bg-rrteal">
                 <WaveTop orientation={"top"} color={"charcoal"} scale={50} />
+                <div className="flex flex-col w-full mx-auto max-w-screen-lg p-6">
+                    <h1 className="text-5xl mb-10 mx-auto text-rrwhite font-bold">Quick Answers</h1>
+                    <FaqItem question={"How do I place a custom order?"}>
+                        <p>If you're looking to place a custom order, you can reach out to us directly through social media or our <Link className="text-amber-500/75 hover:text-amber-500" href={"/contact"}>contact page</Link> with the details of your order and we'll get in touch.</p>
+                    </FaqItem>
+                    <FaqItem question={"Can I use my own image or logo?"}>
+                        <p>Yes we do! Send us your image or logo, and we'll get it engraved on the items of your choosing.</p>
+                    </FaqItem>
+                    <FaqItem question={"What products can I customize?"}>
+                        <p>We offer customization of a wide variety of products, most commonly: Yeti Water Bottles, Key Chains, Mugs, T-Shirts and Hoodies. If you're looking for something special, reach out through our contact page and we'll see how we can help!</p>
+                    </FaqItem>
+                    <FaqItem question={"Is there a minimum order size?"}>
+                        <p>Nope! We do orders of all sizes.</p>
+                    </FaqItem>
+                    <Link href={"/faq"} className="mx-auto px-4 py-2 my-10 bg-amber-500 hover:bg-amber-600 transition-color ease-in-out duration-500 text-white rounded-md border-b-4 border-l-4 font-bold text-xl  border-black/25">All FAQ</Link>
+                </div>
             </div>
-
         </div>
     );
 }  
